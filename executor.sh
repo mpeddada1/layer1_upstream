@@ -18,4 +18,4 @@ echo $PROJECT_ROOT
 
 script_name=$1
 ENTRYPOINT="bash $script_name"
-docker run --volume ${PROJECT_ROOT}:/workspace --entrypoint "/workspace/repo_tests.sh" test-layer1-upstream
+docker run --volume ${PROJECT_ROOT}:/workspace --entrypoint "/workspace/${script_name}" test-layer1-upstream
