@@ -25,12 +25,6 @@ RUN gu install native-image && \
     mv /tmp/maven/apache-maven-3.8.1 /usr/local/lib/maven && \
     rm /tmp/maven.zip && \
     ln -s $JAVA_HOME/lib $JAVA_HOME/conf
-#     && \
-#     # Install Gradle
-#     wget -q https://services.gradle.org/distributions/gradle-4.9-bin.zip -O /tmp/gradle.zip && \
-#     mkdir -p /usr/local/lib/gradle && \
-#     unzip -q /tmp/gradle.zip -d /usr/local/lib/gradle && \
-#     rm /tmp/gradle.zip
 
 ENV PATH $PATH:/usr/local/lib/maven/bin
 

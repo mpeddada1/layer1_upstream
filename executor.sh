@@ -11,11 +11,15 @@ function repo_root() {
 }
 
 # Get pwd of the script
-SCRIPT_PATH="$(realpath "$0")"
-SCRIPT_DIR="$(dirname "${SCRIPT_PATH}")"
-PROJECT_ROOT="$(repo_root "${SCRIPT_DIR}")"
-echo $PROJECT_ROOT
-ls 
+#SCRIPT_PATH="$(realpath "$0")"
+#SCRIPT_DIR="$(dirname "${SCRIPT_PATH}")"
+#PROJECT_ROOT="$(repo_root "${SCRIPT_DIR}")"
+
+SCRIPT_DIR=$(cd -- "$(dirname -- "$BASH_SOURCE")"; pwd)
+ROOT_DIR=$(dirname -- "$script_dir")
+echo $SCRIPT_DIR
+
+#echo $PROJECT_ROOT
 script_name=$1
 ENTRYPOINT="bash $script_name"
-docker run --volume ${PROJECT_ROOT}:/workspace --entrypoint "/workspace/${script_name}" test-layer1-upstream
+docker run --volume ${SCRIPT_DIR}:/workspace --entrypoint "/workspace/${script_name}" test-layer1-upstream
