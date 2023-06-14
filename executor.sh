@@ -15,7 +15,7 @@ SCRIPT_PATH="$(realpath "$0")"
 SCRIPT_DIR="$(dirname "${SCRIPT_PATH}")"
 PROJECT_ROOT="$(repo_root "${SCRIPT_DIR}")"
 echo $PROJECT_ROOT
-
+ls 
 script_name=$1
 ENTRYPOINT="bash $script_name"
 docker run --volume ${PROJECT_ROOT}:/workspace --entrypoint "/workspace/${script_name}" test-layer1-upstream
