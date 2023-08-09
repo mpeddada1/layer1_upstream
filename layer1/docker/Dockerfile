@@ -36,5 +36,6 @@ RUN yum install -y google-cloud-sdk
 ENV PATH $PATH:/usr/local/gcloud/google-cloud-sdk/bin
 
 WORKDIR /workspace
+RUN mkdir -p /workspace/script
 
 COPY . /workspace

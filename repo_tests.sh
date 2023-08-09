@@ -1,6 +1,9 @@
 #!/bin/bash
 
+echo "*********RUNNING TEST ***********"
 pwd
 ls
-echo "Hi"
+echo "*********PRINTING WORKSPACE ***********"
+
+ls /workspace
 mvn test
