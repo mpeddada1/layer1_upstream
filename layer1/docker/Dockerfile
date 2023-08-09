@@ -37,5 +37,6 @@ ENV PATH $PATH:/usr/local/gcloud/google-cloud-sdk/bin
 
 WORKDIR /workspace
 RUN mkdir -p /workspace/script
+RUN mkdir -p /workspace/layer1_upstream
 
-COPY . /workspace
+COPY . /workspace/layer1_upstream
