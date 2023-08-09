@@ -30,6 +30,6 @@ root_caller_path="$(repo_root "${caller_path}")"
 echo "${root_caller_path}"
 echo $PROJECT_ROOT
 script_name=$1
-ENTRYPOINT="pwd && mvn test"cd ..
+ENTRYPOINT="pwd && mvn test"
 
 docker run --volume "${root_caller_path}":/workspace --entrypoint "/workspace/${script_name}" test-layer1-upstream
