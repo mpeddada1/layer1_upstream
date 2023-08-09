@@ -32,4 +32,4 @@ echo $PROJECT_ROOT
 script_name=$1
 ENTRYPOINT="pwd && mvn test"cd ..
 
-docker run --volume "${root_caller_path}":/workspace --volume "${PROJECT_ROOT}":/workspace/script --entrypoint "/workspace/script/${script_name}" test-layer1-upstream
+docker run --volume "${root_caller_path}":/workspace --entrypoint "/workspace/${script_name}" test-layer1-upstream
