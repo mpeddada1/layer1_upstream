@@ -19,7 +19,7 @@ function repo_root() {
 #ROOT_DIR=$(dirname -- "$script_dir")
 #echo $SCRIPT_DIR
 
-#echo $PROJECT_ROOT
+echo $PROJECT_ROOT
 script_name=$1
 ENTRYPOINT="bash $script_name"
 docker run --volume ${PROJECT_ROOT}:/workspace --entrypoint "/workspace/${script_name}" test-layer1-upstream
