@@ -39,4 +39,4 @@ WORKDIR /workspace
 RUN mkdir -p /workspace/script
 RUN mkdir -p /workspace/layer1_upstream
 
-COPY . /workspace/layer1_upstream
+ADD . /workspace/layer1_upstream

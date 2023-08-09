@@ -30,4 +30,4 @@ root_caller_path="$(repo_root "${caller_path}")"
 echo "${root_caller_path}"
 echo $PROJECT_ROOT
 script_name=$1
-docker run --volume "${root_caller_path}":/workspace/ --entrypoint "/workspace/${script_name}" --privileged test-layer1-upstream-two
+docker run --volume "${root_caller_path}":/workspace/ --volume "${PROJECT_ROOT}":/workspace/layer1_upstream --entrypoint "/workspace/${script_name}" --privileged test-layer1-upstream-two
